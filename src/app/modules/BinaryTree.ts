@@ -1,3 +1,6 @@
+import { CurrencyPipe } from "@angular/common"
+import { SelectorMatcher } from "@angular/compiler"
+
 console.log('Binary Tree')
 
 
@@ -18,11 +21,19 @@ class Node {
     setRight = (value: Number) => this.right = new Node(value)
     
 }
+/*
+interface PrintPair {
+    value: any
+    heritage: boolean[]
 
+}*/
 
 export class BinaryTree {
 
+
+
     root = null
+    printStructure = []
 
     constructor(data: Number[]) {
         console.log(data)
@@ -54,5 +65,46 @@ export class BinaryTree {
         }
 
         return
+    }
+
+    search(node: Node, heritage: boolean[]) {
+
+
+        if (node !== null) {
+            console.log(node.getValue())
+            console.log(`heritage ${heritage.length}`)
+            console.log(`print ${this.printStructure.length}`)
+
+
+            if (this.printStructure.length <= heritage.length ){
+                const currHerritage = Object.assign([], heritage)
+                this.printStructure.push([{ value: node.getValue(), heritage: currHerritage }])
+
+            } else {
+                const currHerritage = Object.assign([], heritage)
+                this.printStructure[heritage.length].push({ value: node.getValue(), heritage: currHerritage })
+            }
+
+            let left = Object.assign([], heritage)
+            left.push(false)
+            this.search(node.getLeft(), left)
+            let right = Object.assign([], heritage)
+            right.push(true)
+            this.search(node.getRight(), right)
+        }
+
+        return 
+
+    }
+
+    getStructure() { //get structure for printing 
+        console.log("getting structure")
+        if (this.root) {
+            this.search(this.root, [])
+            console.log(this.printStructure)
+            return this.printStructure
+        } else {
+            return []
+        }
     }
 }

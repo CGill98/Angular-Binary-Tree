@@ -34,11 +34,7 @@ import { LevelComponent } from './level/level.component'
 
 export class AppModule { 
   constructor() {
-    const binTree = new BinaryTree([3,5,2,1,6,0])
+    const binTree = new BinaryTree([4,2,6,1,3,5,7])
+    const bintree = binTree.getStructure()
   }
 }
-
-/* 
-
-
-*/
