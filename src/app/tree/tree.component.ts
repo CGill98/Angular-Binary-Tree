@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tree',
@@ -7,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TreeComponent implements OnInit {
 
-  constructor() { }
+  @Input() printStructure: any 
+
+
+  constructor() { 
+    if (this.printStructure) {
+      console.log(this.printStructure)
+
+    }
+
+  }
 
   ngOnInit(): void {
   }

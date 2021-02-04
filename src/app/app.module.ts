@@ -7,7 +7,6 @@ import { TreeComponent } from './tree/tree.component';
 import { HeaderComponent } from './header/header.component';
 import { NodeComponent } from './node/node.component';
 
-import {BinaryTree} from './modules/BinaryTree';
 import { LevelComponent } from './level/level.component'
 
 //
@@ -33,8 +32,8 @@ import { LevelComponent } from './level/level.component'
 
 
 export class AppModule { 
-  constructor() {
-    const binTree = new BinaryTree([4,2,6,1,3,5,7])
-    const bintree = binTree.getStructure()
-  }
+
+
+
+  constructor() {}
 }

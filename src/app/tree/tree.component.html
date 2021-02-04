@@ -1,2 +1,4 @@
-<p>tree</p>
+<ng-template ngFor let-level [ngForOf]="printStructure">
+    <app-level [level]="level"></app-level>
+</ng-template>
 

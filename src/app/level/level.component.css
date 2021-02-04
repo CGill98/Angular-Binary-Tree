@@ -1,0 +1,14 @@
+.level {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.node {
+    border-radius: 100%;
+    background-color: cadetblue;
+    box-shadow: 1px 3px 5px #000;
+    font-size: 20px;
+    padding: 25px;
+    margin: 5px;
+}
